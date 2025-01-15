@@ -38,8 +38,8 @@ function createFirstSlide() {
 function updateSlide() {
   const tagLineEl = document.getElementById('tagLine')
   const img = document.querySelector('.banner-img');
-  img.src = `assets/images/slideshow/${slides[currentSlideIndex].image}`; 
   if (img) {
+    img.src = `assets/images/slideshow/${slides[currentSlideIndex].image}`; 
     const imagePath = `assets/images/slideshow/${slides[currentSlideIndex].image}`;
     console.log(`Setting img.src to: ${imagePath}`);  // Log to confirm the image path
     img.src = imagePath;  // Set the image source
@@ -50,6 +50,7 @@ function updateSlide() {
   generateDots()
 }
 
+function addEventArrowLeft(){
 let leftArrowClick = document.getElementById("leftArrow");
 leftArrowClick.addEventListener("click", function () {
   if (currentSlideIndex== 0) {
@@ -60,8 +61,9 @@ leftArrowClick.addEventListener("click", function () {
   }
   updateSlide();
 })
+}
 
-
+function addEventArrowRight(){
 let rightArrowClick = document.getElementById("rightArrow");
 rightArrowClick.addEventListener("click", function () {
     if (currentSlideIndex === slides.length -1) {
@@ -72,7 +74,7 @@ rightArrowClick.addEventListener("click", function () {
     }
     updateSlide();
   })
-
+}
 
 let totalDots = 4; 
 function generateDots() {
