@@ -53,12 +53,7 @@ function updateSlide() {
 function addEventArrowLeft(){
 let leftArrowClick = document.getElementById("leftArrow");
 leftArrowClick.addEventListener("click", function () {
-  if (currentSlideIndex== 0) {
-    currentSlideIndex = slides.length -1; 
-  }
-  else { 
-    currentSlideIndex -= 1;
-  }
+  currentSlideIndex = (currentSlideIndex == 0) ? slides.length - 1 : currentSlideIndex - 1;
   updateSlide();
 })
 }
@@ -66,12 +61,7 @@ leftArrowClick.addEventListener("click", function () {
 function addEventArrowRight(){
 let rightArrowClick = document.getElementById("rightArrow");
 rightArrowClick.addEventListener("click", function () {
-    if (currentSlideIndex === slides.length -1) {
-      currentSlideIndex = 0; 
-    }
-    else { 
-      currentSlideIndex += 1;
-    }
+  currentSlideIndex = (currentSlideIndex === slides.length - 1) ? 0 : currentSlideIndex + 1;
     updateSlide();
   })
 }
