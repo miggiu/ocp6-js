@@ -18,6 +18,7 @@ const slides = [
 ]
 
 let currentSlideIndex = 0;
+let totalDots = 4; 
 const bannerEl = document.getElementById('banner')
 
 
@@ -41,8 +42,7 @@ function updateSlide() {
   if (img) {
     img.src = `assets/images/slideshow/${slides[currentSlideIndex].image}`; 
     const imagePath = `assets/images/slideshow/${slides[currentSlideIndex].image}`;
-    console.log(`Setting img.src to: ${imagePath}`);  // Log to confirm the image path
-    img.src = imagePath;  // Set the image source
+    img.src = imagePath;  
   } else {
     console.log('Image element not found!');
   }
@@ -66,7 +66,7 @@ rightArrowClick.addEventListener("click", function () {
   })
 }
 
-let totalDots = 4; 
+
 function generateDots() {
   const dotsContainer = document.querySelector('.dots');
   dotsContainer.innerHTML = ''; 
